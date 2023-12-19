@@ -13,7 +13,8 @@ class AppTextFormField extends StatelessWidget {
       this.hintStyle,
       required this.hintText,
       this.isObscureText,
-      this.suffixIcon})
+      this.suffixIcon,
+      this.backgroundColor})
       : super(key: key);
   final EdgeInsetsGeometry? contentPadding;
   final InputBorder? focusedBorder;
@@ -23,6 +24,8 @@ class AppTextFormField extends StatelessWidget {
   final String hintText;
   final bool? isObscureText;
   final Widget? suffixIcon;
+  final Color? backgroundColor;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -31,7 +34,7 @@ class AppTextFormField extends StatelessWidget {
         contentPadding: contentPadding ??
             EdgeInsets.symmetric(
               horizontal: 20.w,
-              vertical: 10.h,
+              vertical: 18.h,
             ),
         focusedBorder: focusedBorder ??
             OutlineInputBorder(
@@ -47,9 +50,11 @@ class AppTextFormField extends StatelessWidget {
                 width: 1.3,
               ),
             ),
-        hintStyle: hintStyle ?? TextStyles.font14DarkBlueMedium,
+        hintStyle: hintStyle ?? TextStyles.font14GrayRegular,
         hintText: hintText,
         suffixIcon: suffixIcon,
+        filled: true,
+        fillColor: backgroundColor ?? ColorsManager.moreLightGray,
       ),
       obscureText: isObscureText ?? false,
       style: TextStyles.font14DarkBlueMedium,
