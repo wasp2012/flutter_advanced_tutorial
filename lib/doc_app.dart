@@ -10,11 +10,11 @@ class DocApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize:const Size(375, 812),
+        designSize: const Size(375, 812),
         minTextAdapt: true,
         child: MaterialApp(
           theme: ThemeData(
-            primaryColor: ColorsManagter.mainBlue,
+            primaryColor: ColorsManager.mainBlue,
             scaffoldBackgroundColor: Colors.white,
           ),
           debugShowCheckedModeBanner: false,
